@@ -5,7 +5,10 @@ from prettyconf.configuration import Configuration
 config = Configuration(starting_path=settings.BASE_DIR)
 
 # Define o nome do modulo
-PACKAGE_NAME = 'exchange_orderbook'
+PACKAGE_NAME = 'exchange_comissions'
 
 # Diz ao Django aonde está a configuração desse modulo
 default_app_config = PACKAGE_NAME + '.apps.Config'
+
+# Define o prefixo da URL de patrocinio
+settings.SPONSORSHIP_URL_PREFIX = config('SPONSORSHIP_URL_PREFIX', default='s/')
