@@ -28,4 +28,14 @@ class SponsorshipView(SignupView):
         sponsorship.sponsor = self.sponsor
         sponsorship.sponsored = self.created_user
         sponsorship.save()
+
+
+@method_decorator([login_required], name='dispatch')
+class DashboardView(TemplateView):
+    template_name = 'comissions/dashboard.html'
+
+    def get_context_data(self):
+        context = super().get_context_data()
+        context['customers'] = Sponsorships.objects.filter(sponsor=self.request.user, sponsored__is_active=True)
+        return context
         

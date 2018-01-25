@@ -6,4 +6,5 @@ from . import views
 
 urlpatterns = [
 	path(settings.SPONSORSHIP_URL_PREFIX + '<username>/', views.SponsorshipView.as_view(), name='comissions>sponsorship'),
+	path('comissions/dashboard/', views.DashboardView.as_view(), name='comissions>dashboard'),
 ]
