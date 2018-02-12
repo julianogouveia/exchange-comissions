@@ -16,7 +16,7 @@ class SponsorshipView(SignupView):
         self.sponsor = Users.objects.get(username=username, is_active=True)
         return super().dispatch(request, username)
 
-    def get_context_data(self):
+    def get_context_data(self, form=None):
         context = super().get_context_data()
         context['sponsor'] = self.sponsor
         return context
