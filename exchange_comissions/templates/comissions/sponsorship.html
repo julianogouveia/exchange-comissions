@@ -18,17 +18,19 @@
                     </a>
                 </div>
                 <div class="m-t-10 p-20">
-                    <p class="text-center">{% trans "Your sponsor is:" %}</p>
-                    <h4 class="text-center m-b-20">
-                        {% if sponsor.avatar %}
-                            <div>
-                                <img src="{% thumbnail sponsor.avatar 100x100 crop %}" class="rounded-circle">
-                            </div>
-                        {% endif %}
+                    {% if settings.SPONSORSHIP_SHOW_DATA_ON_SINGUP %}
+                        <p class="text-center">{% trans "Your sponsor is:" %}</p>
+                        <h4 class="text-center m-b-20">
+                            {% if sponsor.avatar %}
+                                <div>
+                                    <img src="{% thumbnail sponsor.avatar 100x100 crop %}" class="rounded-circle">
+                                </div>
+                            {% endif %}
 
-                        {{ sponsor.first_name }} {{ sponsor.last_name }}<br>
-                        {{ sponsor.email }}
-                    </h4>
+                            {{ sponsor.first_name }} {{ sponsor.last_name }}<br>
+                            {{ sponsor.email }}
+                        </h4>
+                    {% endif %}
 
                     {% include "account/signup-form.html" with form=form %}
                 </div>

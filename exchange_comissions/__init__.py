@@ -12,3 +12,6 @@ default_app_config = PACKAGE_NAME + '.apps.Config'
 
 # Define o prefixo da URL de patrocinio
 settings.SPONSORSHIP_URL_PREFIX = config('SPONSORSHIP_URL_PREFIX', default='s/')
+
+# Mostra os dados do patrocionador na pagina de cadastro por indicacao
+settings.SPONSORSHIP_SHOW_DATA_ON_SINGUP = config('SPONSORSHIP_SHOW_DATA_ON_SINGUP', default=True, cast=config.boolean)
