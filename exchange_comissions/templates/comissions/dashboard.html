@@ -4,14 +4,14 @@
 
 {% block content %}
 
-    <h6 class="page-title"><i class="zmdi zmdi-accounts"></i> {% trans "Comissions" %}</h6>
+    <h6 class="page-title"><i class="zmdi zmdi-accounts"></i> {% trans "Referral" %}</h6>
 
     <div class="row">
         <div class="col-md-12 col-lg-6">
             <div class="card-box tilebox-one">
                 <i class="icon-anchor float-right text-muted"></i>
-                <h6 class="text-muted text-uppercase m-b-20">{% trans "Indication Link" %}</h6>
-                <h4 class="m-b-20" data-plugin="counterup"><a href="{{ settings.DOMAIN }}/{{ settings.SPONSORSHIP_URL_PREFIX }}{{ request.user.username }}" target="_blank">{{ settings.DOMAIN }}/{{ settings.SPONSORSHIP_URL_PREFIX }}{{ request.user.username }}</a></h4>
+                <h6 class="text-muted text-uppercase m-b-20">{% trans "Referral Link" %}</h6>
+                <h4 class="m-b-20" data-plugin="counterup"><a href="{{ DOMAIN }}/{{ SPONSORSHIP_URL_PREFIX }}{{ request.user.username }}" target="_blank">{{ DOMAIN }}/{{ SPONSORSHIP_URL_PREFIX }}{{ request.user.username }}</a></h4>
             </div>
         </div>
         <div class="col-sm-6 col-md-6 col-lg-3">
