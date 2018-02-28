@@ -15,3 +15,8 @@ settings.SPONSORSHIP_URL_PREFIX = config('SPONSORSHIP_URL_PREFIX', default='s/')
 
 # Mostra os dados do patrocionador na pagina de cadastro por indicacao
 settings.SPONSORSHIP_SHOW_DATA_ON_SINGUP = config('SPONSORSHIP_SHOW_DATA_ON_SINGUP', default=True, cast=config.boolean)
+
+# Adiciona as variaveis de contexto ao template
+settings.TEMPLATES[0]['OPTIONS']['context_processors'] += [
+    '{}.context_processors.exchange'.format(PACKAGE_NAME),
+]
