@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load thumbnail %}
+{% load static %}
 
 {% block body %}
 
@@ -13,8 +14,7 @@
             <div class="card-box mb-0">
                 <div class="text-center m-t-20">
                     <a class="logo">
-                        <i class="zmdi zmdi-group-work icon-c-logo"></i>
-                        <span>{{ PROJECT_NAME }}</span>
+                        <img src="{% static "assets/images/logo-color.png" %}" height="80">
                     </a>
                 </div>
                 <div class="m-t-10 p-20">

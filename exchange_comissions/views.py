@@ -19,6 +19,7 @@ class SponsorshipView(SignupView):
     def get_context_data(self, form=None):
         context = super().get_context_data()
         context['sponsor'] = self.sponsor
+        context['sponsorships'] = Sponsorships.objects.filter(sponsor=self.request.user)
         return context
 
     def after_signup(self, form):
