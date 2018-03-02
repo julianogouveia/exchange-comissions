@@ -16,6 +16,19 @@ class SponsorshipView(SignupView):
         self.sponsor = Users.objects.get(username=username, is_active=True)
         return super().dispatch(request, username)
 
+    def get(self, *args, **kwargs):
+        if not self.is_open():
+            return self.closed()
+        return self.render_to_response(self.get_context_data())
+
+    def post(self, *args, **kwargs):
+        if not self.is_open():
+            return self.closed()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        return self.form_invalid(form)
+
     def get_context_data(self, form=None):
         context = super().get_context_data()
         context['sponsor'] = self.sponsor
